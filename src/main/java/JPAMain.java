@@ -1,3 +1,6 @@
+import domain.Address;
+import domain.Member;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -14,7 +17,11 @@ public class JPAMain {
 
         try {
 
+            Member member = new Member();
+            member.setName("kadun");
+            member.setAddress(new Address("seoul", "song-pa", 12345));
 
+            em.persist(member);
 
             tx.commit();
 
